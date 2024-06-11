@@ -10,10 +10,10 @@ func main() {
     wg.Add(5)
 
     for i := 0; i < 5; i++ {
-        go func() {
+        go func(i) {
             fmt.Println(i)
             wg.Done()
-        }()
+        }(i)
     }
 
     wg.Wait()
